@@ -24,13 +24,19 @@ const buttoncustom = document.querySelector('.buttoncustom');
 
 let taxa = 0;
 
+
 function updateValue() {
 
     if(conta.value > 0 && pessoas.value >= 1) {
         finalprice.value = ((conta.value * taxa) + conta.value / pessoas.value).toFixed(2)
         gorjetafinal.value = ((conta.value * taxa) / pessoas.value).toFixed(2)
+        
+    } else if (pessoas.value < 1) {
+        alert('Número de Pessoas Inválido')
+    } else if (conta.value <= 0) {
+        alert(`R$ ${conta.value} não é um valor aceito `)
     } else {
-        alert('Error')
+        alert('Preencha Valor e número de pessoas')
     }
 }
 
@@ -42,7 +48,7 @@ function unchecked() {
 }
 
 retirada.addEventListener('change', function() {
-    if(retirada.checked == true) {
+    if(retirada.checked) {
         finalprice.value = conta.value
     
         console.log('retirada')
@@ -51,18 +57,30 @@ retirada.addEventListener('change', function() {
 
 
 entrega.addEventListener('change', function() {
-    if(entrega.checked == true) {
+    if(entrega.checked) {
         finalprice.value = (conta.value + conta.value * taxaEntrega)
     
         console.log('entrega')
     }
 })
 
+
+const generalInputs = document.querySelectorAll('.general')
+
 consumo.addEventListener('change', function() {
-    if(consumo.checked == true) {
+    if(consumo.checked) {
+        console.log('consumo')
+
+
+        generalInputs.forEach(function(generalInput) {
+            generalInput.removeAttribute("disabled");
+        })
+
         inputs.forEach(function(input) {
             input.addEventListener('change', function() {
                 updateValue()
+                // Testar função a seguir
+                // Number(conta.value).toFixed(2)
             })
         })
         
