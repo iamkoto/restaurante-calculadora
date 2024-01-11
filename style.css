@@ -16,6 +16,9 @@ body {
     align-items: center;
     height: 100vh;
     background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .bothsides {
@@ -25,10 +28,11 @@ body {
     background-color: hsl(0, 0%, 100%);
     padding: 30px;
     border-radius: 15px;
+    max-width: 1440px;
 }
 
 .left {
-    width: 40%;
+    width: 50%;
 }
 
 .conta {
@@ -47,8 +51,31 @@ body {
     border-radius: 5px;
 }
 
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttoncontainer {
+    position: relative;
+    width: 30%;
+}
+
+.button {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button+label {
+    display: block;
+    background-color:hsl(183, 100%, 15%);
+    color: hsl(189, 41%, 97%);
+    height: 40px;
+}
+
 .right {
-    width: 40%;
+    width: 50%;
     background-color: hsl(183, 100%, 15%);
     border-radius: 15px;
     padding: 30px;
