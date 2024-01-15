@@ -86,13 +86,28 @@ consumo.addEventListener('change', function() {
             })
         })
         
+        
         buttonDivs.forEach(function(buttonDiv) {
             buttonDiv.addEventListener('click', function() {
+                //Verificar se há outros inputs marcados
+                var checkedInputs = document.querySelectorAll('.active input');
+                checkedInputs.forEach(function(checkedInput) {
+                    checkedInput.checked = false;
+                })
+                
+                //Remover as classes active de todos botões
                 buttonDivs.forEach(function(btn) {
                     btn.classList.remove('active')
                 })
 
+                //Adicionar a classe active ao botão clicado
                 buttonDiv.classList.toggle('active')
+
+                //Marcar o input correspondente
+                var input = buttonDiv.querySelector('input');
+                if(input) {
+                    input.checked = true;
+                }
             })
         })
 
