@@ -22,6 +22,8 @@ const buttons = document.querySelectorAll('.button')
 
 const buttoncustom = document.querySelector('.buttoncustom');
 
+const buttonDivs = document.querySelectorAll('.buttoncontainer')
+
 let taxa = 0;
 
 
@@ -84,6 +86,18 @@ consumo.addEventListener('change', function() {
             })
         })
         
+        buttonDivs.forEach(function(buttonDiv) {
+            buttonDiv.addEventListener('click', function() {
+                buttonDivs.forEach(function(btn) {
+                    btn.classList.remove('active')
+                })
+
+                buttonDiv.classList.toggle('active')
+            })
+        })
+
+
+
         buttons.forEach(function(button) {
             
             

@@ -57,6 +57,10 @@ body {
 }
 
 .buttoncontainer {
+    display: block;
+    background-color:hsl(183, 100%, 15%);
+    color: hsl(189, 41%, 97%);
+    height: 40px;
     position: relative;
     width: 30%;
 }
@@ -67,11 +71,8 @@ body {
     opacity: 0;
 }
 
-.button+label {
-    display: block;
-    background-color:hsl(183, 100%, 15%);
-    color: hsl(189, 41%, 97%);
-    height: 40px;
+.active {
+    background-color: hsl(172, 67%, 45%);
 }
 
 .right {
