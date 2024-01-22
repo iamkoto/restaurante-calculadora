@@ -138,4 +138,8 @@ consumo.addEventListener('change', function() {
     }
 })
 
+const reset = querySelector('.reset');
+
+
+
 

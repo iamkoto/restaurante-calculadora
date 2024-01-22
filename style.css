@@ -41,7 +41,7 @@ body {
 }
     
 .lefttext {
-    color:hsl(183, 100%, 15%);
+    color:hsl(184, 14%, 56%);
 }
 
 .contacontainer {
@@ -73,11 +73,56 @@ body {
 
 .active {
     background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
 }
 
 .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 50%;
     background-color: hsl(183, 100%, 15%);
     border-radius: 15px;
     padding: 30px;
+}
+
+.rightcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.righttext {
+    color: hsl(189, 41%, 97%);
+    font-size: 18px;
+}
+
+.rightspan {
+    color: hsl(184, 14%, 56%);
+    font-size: 15px;
+}
+
+.topright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightinput {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(172, 67%, 45%);
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.reset {
+    width: 70%;
+    height: 40px;
+    background-color:  hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
 }

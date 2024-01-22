@@ -9,7 +9,7 @@
 <body>
     <section class="bothsides">
         <div class="left">
-            <div>
+            <div class="lefttext">
                 <input type="checkbox" name="Consumo" class="consumo">
                 <label for="Consumo na loja">Consumo na loja</label>
                 <input type="checkbox" class="retirada">
@@ -58,12 +58,19 @@
             </div>
         </div>
         <div class="right">
-            <div>
-                <label for="finaltip">Tip per Person</label>
-                <input name="finaltip" class="finaltip" type="number" placeholder="0" readonly>
-                <label for="finalprice">Final Price</label>
-                <input class="finalprice" type="number" name="finalprice" id="0" readonly>
+            <div class="rightcontainer">
+                <div class="topright">
+                    <label class="righttext" for="finaltip">Tip amount <br> <span class="rightspan">/ Person</span></label>
+                    <input name="finaltip" class="finaltip rightinput" type="number" placeholder="0" readonly>
+                </div>
+                <div class="topright">
+                    <label class="righttext" for="finalprice">Total <br> <span class="rightspan">/ Person</span></label>
+                    <input class="finalprice rightinput" type="number" name="finalprice" id="0" readonly>
+                </div>
+
             </div> 
+
+            <div class="reset">RESET</div>
         </div>
     </section>
 
