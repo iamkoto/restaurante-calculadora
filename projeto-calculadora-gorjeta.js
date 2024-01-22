@@ -29,7 +29,7 @@ let taxa = 0;
 
 function updateValue() {
 
-    if(conta.value > 0 && pessoas.value >= 1) {
+    if(conta.value >= 0 && pessoas.value >= 1) {
         finalprice.value = ((conta.value * taxa) + conta.value / pessoas.value).toFixed(2)
         gorjetafinal.value = ((conta.value * taxa) / pessoas.value).toFixed(2)
         
@@ -46,6 +46,9 @@ function updateValue() {
 function unchecked() {
     buttons.forEach(function(button) {
         button.checked = false
+    })
+    buttonDivs.forEach(function(btn) {
+        btn.classList.remove('active')
     })
 }
 
@@ -107,7 +110,9 @@ consumo.addEventListener('change', function() {
                 var input = buttonDiv.querySelector('input');
                 if(input) {
                     input.checked = true;
+                    input.dispatchEvent(new Event('change'));
                 }
+                
             })
         })
 
@@ -138,8 +143,14 @@ consumo.addEventListener('change', function() {
     }
 })
 
-const reset = querySelector('.reset');
+const reset = document.querySelector('.reset');
 
+reset.addEventListener('click', function() {
+    conta.value = '0';
 
+    unchecked()
+    
+    updateValue()
+})
 
 
